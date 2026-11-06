@@ -10,6 +10,8 @@ import image9 from '../assets/image9.jpg'
 import image10 from '../assets/image10.jpg'
 import image11 from '../assets/image11.jpg'
 import image12 from '../assets/image12.jpg'
+import image13 from '../assets/image13.jpg'
+import image14 from '../assets/image14.jpg'
 import { useNavigate } from 'react-router-dom'
 
 export default function Product(){
@@ -77,7 +79,17 @@ export default function Product(){
         image: image12,
         name: "Make Up",
         price: 250
-    },]
+    },{
+        id:13,
+        image: image13,
+        name: "Camear",
+        price: 500
+    },{
+        id:14,
+        image: image14,
+        name: "Smart Tv",
+        price: 1500
+    }]
     return(
         <div>
             <div className="product-container">
