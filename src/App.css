@@ -370,4 +370,7 @@
     height: 48%;
     /* background-color: red; */
   }
+  .product-card{
+    width: 100%;
+  }
 }
