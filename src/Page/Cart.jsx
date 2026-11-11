@@ -1,31 +1,50 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { useState } from "react"
 import { context } from "../App"
 export default function Cart(){
     const {store,setStore} = useContext(context)
-    const [show,setShow] = useState([])
+    const [total,setTotal] = useState()   
     function remove(e){
-        if(store.lenght > 0){
+        if(store.length > 0){
            const item = store.filter(function(res){
                 return(
                     e.id !== res.id 
                 )
             })
             setStore(item)
-            controll()
+            // controll()
         }else{
-            localStorage.removeItem('storing')
-            setShow([])
+            // localStorage.removeItem('storing')
+            // setShow([])
             alert('Empty Store')
+            // controll()
         }
     }
-    function controll(){
-        const getting = JSON.parse(localStorage.getItem('storing'))
-        console.log(getting, 'getting value')
-        setShow(getting)
+
+    function add(){
+        let sum = 0
+        if(store.length > 0){
+            store.map(function(res){
+                sum += res.price
+            })
+        // console.log(sum)
+            setTotal(sum)
+        }
+        else{
+            setTotal(0)
+        }
     }
+    useEffect(function(){
+        add()
+    },[store])
+    // useEffect(function(){
+    //     controll()
+    // },[])
+    // useEffect(function(){
+    //     controll()
+    // },[store])
     return(
-        <div>
+        <div className="cart">
             <div className="product-container">
                 {store.map(function(res){
                     return(
@@ -43,6 +62,7 @@ export default function Cart(){
                     )
                 })}
             </div>
+            <p>Total:{total}</p>
         </div>
     )
 }

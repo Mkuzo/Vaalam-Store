@@ -10,12 +10,19 @@ export const context = createContext()
 function App() {
   const [count, setCount] = useState(0)
   const [store,setStore] = useState([])
-  useEffect(function(){
-    localStorage.setItem('storing',JSON.stringify(store))
-  },[store])
+  // const [show,setShow] = useState([])
+  // function controll(){
+  //   const getting = JSON.parse(localStorage.getItem('storing'))
+  //   console.log(getting, 'getting value')
+  //   setShow(getting)
+  // }
+  // useEffect(function(){
+  //   localStorage.setItem('storing',JSON.stringify(store))
+  // },[store])
+  
   return (
     <>
-      <context.Provider value={{store,setStore}}>
+      <context.Provider value={{store,setStore,}}>
         <Nav></Nav>
         <AppRoute></AppRoute>
       </context.Provider>
