@@ -5,6 +5,7 @@ import image3 from '../assets/image3.jpg'
 import image4 from '../assets/image4.jpg'
 import image5 from '../assets/image5.jpg'
 import image6 from '../assets/image6.jpg'
+// import Product from './Product'
 import { useNavigate } from 'react-router-dom'
 export default function Home(){
     const navigate= useNavigate()
@@ -32,6 +33,19 @@ export default function Home(){
                     <div className="read-text">
                     <h1>Car</h1>
                     </div>
+                    <div className="read-container2">
+                        <div className="read-image2">
+                            {/* <img src={image3} alt="" /> */} 
+                            <h1>Car</h1>
+                        </div>
+                        <div className="read-text2">
+                            {/* <h1>Car</h1> */}
+                            <button>Read More</button>
+                            <button onClick={handleProduct}>Go to Product</button>
+                        </div>
+
+                    </div>
+                    
                 </div>
                 <div className="read-container">
                     <div className="read-image">
@@ -39,6 +53,18 @@ export default function Home(){
                     </div>
                     <div className="read-text">
                     <h1>Car</h1>
+                    </div>
+                    <div className="read-container2">
+                        <div className="read-image2">
+                            {/* <img src={image3} alt="" /> */} 
+                            <h1>Car</h1>
+                        </div>
+                        <div className="read-text2">
+                            {/* <h1>Car</h1> */}
+                            <button>Read More</button>
+                            <button onClick={handleProduct}>Go to Product</button>
+                        </div>
+
                     </div>
                 </div>
                 <div className="read-container">
@@ -48,6 +74,18 @@ export default function Home(){
                     <div className="read-text">
                     <h1>Car</h1>
                     </div>
+                    <div className="read-container2">
+                        <div className="read-image2">
+                            {/* <img src={image3} alt="" /> */} 
+                            <h1>Car</h1>
+                        </div>
+                        <div className="read-text2">
+                            {/* <h1>Car</h1> */}
+                            <button>Read More</button>
+                            <button onClick={handleProduct}>Go to Product</button>
+                        </div>
+
+                    </div>
                 </div>
                 <div className="read-container">
                     <div className="read-image">
@@ -55,6 +93,18 @@ export default function Home(){
                     </div>
                     <div className="read-text">
                     <h1>Smart Watch</h1>
+                    </div>
+                    <div className="read-container2">
+                        <div className="read-image2">
+                            {/* <img src={image3} alt="" /> */} 
+                            <h1>Smart Watch</h1>
+                        </div>
+                        <div className="read-text2">
+                            {/* <h1>Car</h1> */}
+                            <button>Read More</button>
+                            <button onClick={handleProduct}>Go to Product</button>
+                        </div>
+
                     </div>
                 </div>
                 <div className="read-container">
@@ -64,6 +114,18 @@ export default function Home(){
                     <div className="read-text">
                     <h1>HeadPhones</h1>
                     </div>
+                    <div className="read-container2">
+                        <div className="read-image2">
+                            {/* <img src={image3} alt="" /> */} 
+                            <h1>Head Phone</h1>
+                        </div>
+                        <div className="read-text2">
+                            {/* <h1>Car</h1> */}
+                            <button>Read More</button>
+                            <button onClick={handleProduct}>Go to Product</button>
+                        </div>
+
+                    </div>
                 </div>
                 <div className="read-container">
                     <div className="read-image">
@@ -72,9 +134,21 @@ export default function Home(){
                     <div className="read-text">
                     <h1>Laptop</h1>
                     </div>
+                <div className="read-container2">
+                        <div className="read-image2">
+                            {/* <img src={image3} alt="" /> */} 
+                            <h1>Laptop</h1>
+                        </div>
+                        <div className="read-text2">
+                            {/* <h1>Car</h1> */}
+                            <button>Read More</button>
+                            <button onClick={handleProduct}>Go to Product</button>
+                        </div>
+
+                    </div>
                 </div>
-                <h1>To get More Product Click A Button</h1>
-                <button onClick={handleProduct}>Product</button>
+                {/* <h1>To get More Product Click A Button</h1>
+                <button onClick={handleProduct}>Product</button> */}
             </div>
         </div>
     )

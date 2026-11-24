@@ -116,6 +116,7 @@ export default function Product(){
     }
     return(
         <div>
+            <input type="text" />
             <div className="product-container">
                 {data.map(function(res){
                     return(
