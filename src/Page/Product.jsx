@@ -15,12 +15,18 @@ import image14 from '../assets/image14.jpg'
 import image15 from '../assets/image15.jpg'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
+import { useState,useEffect } from 'react'
 import { context } from '../App'
 export default function Product(){
     const {store,setStore} = useContext(context)
     const navigate = useNavigate()
+    const [search,setSearch] = useState()
+    const [searchStore,setSearchStore] = useState([])
     function handleInfo(){
         navigate('/Information')
+    }
+    function handleSearch(e){
+        setSearch(e.target.value)
     }
     const data= [{
         id:1,
@@ -114,9 +120,51 @@ export default function Product(){
             setStore([e])
         }
     }
+    function searchingProduct(){
+        if(search){
+            const searching = data.filter(function(res){
+                return (res.name.includes(search))
+            })
+            console.log(searching.flat(4))
+            setSearchStore(searching)
+        }
+    }
+    useEffect(function(){
+        // searchingProducte()
+        searchingProduct()
+    },[search])
     return(
         <div>
-            <input type="text" />
+            <div className="input">
+                <input type="text" placeholder='Search Products'onChange={handleSearch}/>
+            </div>
+            <div className="h1">
+                <h1>Searched Things</h1>
+            </div>
+                <div className="product-container">
+                {searchStore.length > 0 ? searchStore.map(function(res){
+                    return(
+                        <div className="product-card" key={res.id}>
+                            <div className="product-image">
+                                <img src={res.image} alt="" />
+                            </div>
+                            <div className="product-text">
+                                <h1>{res.name}</h1>
+                                <p>Price: ${res.price}</p>
+                                {/* <button onClick={handleInfo}>View Details</button> */}
+                                {/* <p className='p'>Veiw Details</p> */}
+                                <a onClick={handleInfo}>View Details</a>
+                                <button onClick={function(){
+                                    buy(res)
+                                }}>Add To cart</button>
+                            </div>
+                        </div>
+                    )
+                }):""}
+                </div>
+                <div className="h1">
+                    <h1>Products</h1>
+                </div>
             <div className="product-container">
                 {data.map(function(res){
                     return(
@@ -137,7 +185,7 @@ export default function Product(){
                         </div>
                     )
                 })}
-            </div>
+                </div>
         </div>
     )
 }
