@@ -32,77 +32,93 @@ export default function Product(){
         id:1,
         image: image3,
         name: "Car",
-        price: 1500
+        price: 1500,
+        typeversion:"Latest Version"
     },{
         id:2,
         image: image4,
         name: "Smart Watch",
-        price: 100
+        price: 100,
+        typeversion:"Updated Version"
+
     },{
         id:3,
         image: image5,
         name: "Head Phones",
-        price:200
+        price:200,
+        typeversion:"Latest Version"
     },{
         id:4,
         image: image6,
         name: "Laptop",
-        price: 250
+        price: 250,
+        typeversion:"Used Version"
     },{
         id:5,
         image: image7,
         name: "Motor Cycle",
-        price: 1000
+        price: 1000,
+        typeversion:"Latest Version"
     },{
         id:6,
         image: image8,
         name: "Shoe",
-        price: 50
+        price: 50,
+        typeversion:"Latest Version"
     },{
         id:7,
         image: image9,
         name: "Hand Bag",
-        price: 500
+        price: 500,
+        typeversion:"Latest Version"
     },{
         id:8,
         image: image10,
         name: "Sun Glasses",
-        price: 700
+        price: 700,
+        typeversion:"Latest Version"
     },{
         id:9,
         image: image11,
         name: "Perfumes",
-        price: 200
+        price: 200,
+        typeversion:"Latest Version"
     },{
         id:10,
         image: image12,
         name: "Make Up",
-        price: 250
+        price: 250,
+        typeversion:"Latest Version"
     },{
         id:11,
         image: image13,
         name: "Camear",
-        price: 500
+        price: 500,
+        typeversion:"Latest Version"
     },{
         id:12,
         image: image14,
         name: "Smart Tv",
-        price: 1500
+        price: 1500,
+        typeversion:"Latest Version"
     },{
         id:13,
         image: image15,
         name: "Heater",
-        price: 1500
+        price: 1500,
+        typeversion:"Latest Version"
     },{
         id:14,
         image: image1,
         name: "Car",
-        price: 1000
+        price: 1000,
+        typeversion:"Used Version"
     },{
         id:15,
         image: image2,
         name: "Car",
-        price: 2000
+        price: 2000,
+        typeversion:"Used version"
     }]
     function buy(e){
         // console.log(e)
@@ -132,11 +148,29 @@ export default function Product(){
     useEffect(function(){
         // searchingProducte()
         searchingProduct()
+        // searchByPrice()
     },[search])
+    // function handleSearch2(e){
+    //     setSearch(e.target.value)
+    //     console.log(search)
+    // }
+    // function searchByPrice(){
+    //     if(search){
+    //         const searching = data.filter(function(res){
+    //             return res.price.some(function(res){
+    //                 return res
+    //             })
+    //             // return res.name.includes(search)
+    //         })
+    //         console.lof(searching)
+    //         setSearchStore(searchByPrice)
+    //     }
+    // }
     return(
         <div>
             <div className="input">
                 <input type="text" placeholder='Search Products'onChange={handleSearch}/>
+                {/* <input type="text" placeholder='Search By Price'onChange={handleSearch2} m/> */}
             </div>
             <div className="h1">
                 <h1>Searched Things</h1>
@@ -169,6 +203,9 @@ export default function Product(){
                 {data.map(function(res){
                     return(
                         <div className="product-card" key={res.id}>
+                            <div className="latest-version">
+                                <h1>{res.typeversion}</h1>
+                            </div>
                             <div className="product-image">
                                 <img src={res.image} alt="" />
                             </div>
