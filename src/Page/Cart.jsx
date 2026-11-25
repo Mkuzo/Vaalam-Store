@@ -49,6 +49,9 @@ export default function Cart(){
                 {store.map(function(res){
                     return(
                         <div className="product-card" key={res.id}>
+                            <div className="latest-version">
+                                <h1>{res.typeversion}</h1>
+                            </div>
                             <div className="product-image">
                                 <img src={res.image} alt="" />
                             </div>
